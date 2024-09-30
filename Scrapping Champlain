@@ -1,0 +1,104 @@
+function gatherClasses() {
+    $page = Invoke-WebRequest -TimeoutSec 2 -Uri http://10.0.17.45/Courses-1.html
+
+    # Get all the tr elements of the HTML document
+    $trs = $page.ParsedHtml.getElementsByTagName("tr")
+
+    # Empty array to hold results
+    $FullTable = @()
+    
+    for ($i = 0; $i -lt $trs.length; $i++) { # Going through every tr element
+        # Get every td element of the current tr element 
+        $tds = $trs[$i].getElementsByTagName("td")
+        
+        if ($tds.length -ge 6) {
+            # Want to separate start time and end time from one time field
+            $Times = $tds[5].innerText -split "-"
+
+            $FullTable += [PSCustomObject]@{
+                "Class Code"  = $tds[0].innerText 
+                "Title"       = $tds[1].innerText 
+		 "Days"        = $tds[4].innerText 
+                "Time Start"  = $Times[0] 
+                "Time End"    = $Times[1] 
+                "Instructor"  = $tds[6].innerText 
+                "Location"    = $tds[9].innerText 
+
+            }
+        }
+    } # end of for loop
+
+    return $FullTable 
+}
+
+function daysTranslator($FullTable) {
+
+# Go over every record in the table
+
+ for ($i = 0; $i -lt $FullTable.length; $i++) {
+	# Empty array to hold days for every record 
+	$Days = @()
+
+	# If you see "M" -> Monday 
+	if ($FullTable[$i].Days -ilike "*M*") { $Days += "Monday" }
+
+	# If you see "T" followed by T, W, or F -> Tuesday
+
+	  if ($FullTable[$i].Days -ilike "*T*W*" -or $FullTable[$i].Days -ilike "*T*F*") { $Days += "Tuesday" } 
+	#If you only see "T" -> Tuesday
+
+	ElseIf($FullTable[$i].Days -ilike "*T*") { $Days += "Tuesday" }
+
+	# If you see "w" -> wednesday
+
+	if($FullTable[$i].Days -ilike "*W*"){ $Days += "Wednesday" }
+
+	# If you see "TH" -> Thursday
+
+	if($FullTable[$i].Days -ilike "*TH*"){ $Days += "Thursday" }
+
+	# F -> Friday
+
+	if($FullTable[$i].Days -ilike "*F*") { $Days += "Friday" }
+
+	# Make the switch
+
+	$FullTable[$i].Days = $Days -join ","
+
+	} #End of for loop
+
+return $FullTable
+}
+
+
+$translatedClasses | Where-Object { ($_."Location" -ilike "*JOYC 310*") -and ($_.Days -ilike "Monday") } | Sort-Object "Time Start" | Select-Object "Time Start",  "Time End" , "Class Code"
+
+#function JOYC310Search($FullTable){
+
+#$FullTable | Where-Object { $_."Instructor" -ilike "*Furkan*" } | 
+ #Select-Object "Class Code", Instructor, Location, Days, "Time Start", "Time End"
+
+#function CyberSearch($FullTable){
+$ITSInstructors = $translatedClasses | Where-Object {  ( $_. "Class Code" -ilike "*SYS*") -or ( $_. "Class Code" -ilike "*NET*") -or ( $_. "Class Code" -ilike "*SEC*") -or ($_. "Class Code" -ilike "*FOR*") -or ( $_. "Class Code" -ilike "*CSI*") -or ( $_. "Class Code" -ilike "*DAT*") } |  Select-Object "Instructor" |  Sort-Object "Instructor" -Unique
+$ITSInstructors
+
+#function numclassSearch($FullTable){
+
+$translatedClasses | Where-Object {  $_.Instructor -in $ITSInstructors.Instructor } | Group-Object "Instructor" | Select-Object Count,Name | Sort-Object Count -Descending 
+
+# Invoke the function and display the output
+$classes = gatherClasses
+#$classes
+$translatedClasses = daysTranslator($classes)
+#$translatedClasses
+
+$Furkan = FurkanSearch($translatedClasses)
+$Furkan
+#$JOYC310 = JOYC310Search($translatedClasses)
+
+#$JOYC310 
+#$Cyber = CyberSearch($translatedClasses)
+#$Cyber
+#$numclass = numclassSearch($translatedClasses)
+$
+#$numclass
