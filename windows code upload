@@ -1,0 +1,55 @@
+COuldn't do it directly had to get creative
+
+# List all processes where the ProcessName starts with 'C'
+Get-Process | Where-Object { $_.ProcessName -like 'C*' } | Select-Object ProcessName, Id
+
+# List processes where the executable path does not include 'system32'
+Get-Process | ForEach-Object {
+    try {
+        # Get the process executable path
+        $processPath = (Get-Item $_.Path).DirectoryName
+        # Check if the path does not include 'system32'
+        if (-not $processPath -like '*system32*') {
+            # Output the process information
+            [PSCustomObject]@{
+                ProcessName = $_.ProcessName
+                Id           = $_.Id
+                Path         = $processPath
+            }
+        }
+    } catch {
+        # Ignore processes that do not have a Path (e.g., system processes)
+    }
+}
+
+
+$outputFilePath = "StoppedServices.csv"
+
+# Get stopped services, order them alphabetically by display name, and select required properties
+$stoppedServices = Get-Service | Where-Object { $_.Status -eq 'Stopped' } | 
+                   Sort-Object DisplayName | 
+                   Select-Object DisplayName, Status, ServiceName
+
+# Export the results to a CSV file
+$stoppedServices | Export-Csv -Path $outputFilePath -NoTypeInformation
+
+# Output a message indicating completion
+Write-Host "Stopped services have been saved to $outputFilePath"
+
+
+# Define the URL to open
+$url = "https://www.champlain.edu"
+
+# Define the name of the process for Google Chrome
+$chromeProcessName = "chrome"
+
+# Check if Google Chrome is already running
+$chromeRunning = Get-Process -Name $chromeProcessName -ErrorAction SilentlyContinue
+
+if ($null -eq $chromeRunning) {
+    # Start Google Chrome with the specified URL
+    Start-Process "chrome.exe" -ArgumentList $url
+    Write-Host "Google Chrome started and directed to $url"
+} else {
+    Write-Host "Google Chrome is already running."
+}
