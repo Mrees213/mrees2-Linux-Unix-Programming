@@ -1,0 +1,86 @@
+#TYPE System.IO.FileInfo
+"PSPath","PSParentPath","PSChildName","PSDrive","PSProvider","PSIsContainer","Mode","VersionInfo","BaseName","Target","LinkType","Name","Length","DirectoryName","Directory","IsReadOnly","Exists","FullName","Extension","CreationTime","CreationTimeUtc","LastAccessTime","LastAccessTimeUtc","LastWriteTime","LastWriteTimeUtc","Attributes"
+"Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\item10.ps1","Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","item10.ps1","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\item10.ps1
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","item10","System.Collections.Generic.List`1[System.String]",,"item10.ps1","3","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","False","True","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\item10.ps1",".ps1","9/8/2024 2:55:45 PM","9/8/2024 6:55:45 PM","9/8/2024 2:55:53 PM","9/8/2024 6:55:53 PM","9/8/2024 2:55:53 PM","9/8/2024 6:55:53 PM","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\item11.ps1","Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","item11.ps1","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\item11.ps1
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","item11","System.Collections.Generic.List`1[System.String]",,"item11.ps1","0","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","False","True","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\item11.ps1",".ps1","9/8/2024 4:25:46 PM","9/8/2024 8:25:46 PM","9/8/2024 4:26:01 PM","9/8/2024 8:26:01 PM","9/8/2024 4:26:01 PM","9/8/2024 8:26:01 PM","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\Item9.ps1","Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","Item9.ps1","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\Item9.ps1
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Item9","System.Collections.Generic.List`1[System.String]",,"Item9.ps1","207","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","False","True","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\Item9.ps1",".ps1","9/8/2024 1:48:43 PM","9/8/2024 5:48:43 PM","9/8/2024 2:51:09 PM","9/8/2024 6:51:09 PM","9/8/2024 2:51:09 PM","9/8/2024 6:51:09 PM","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\testfile1.ps1","Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","testfile1.ps1","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\testfile1.ps1
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","testfile1","System.Collections.Generic.List`1[System.String]",,"testfile1.ps1","16","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","False","True","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\testfile1.ps1",".ps1","9/8/2024 12:23:38 PM","9/8/2024 4:23:38 PM","9/8/2024 12:23:38 PM","9/8/2024 4:23:38 PM","9/8/2024 12:23:38 PM","9/8/2024 4:23:38 PM","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\testfile2.ps1","Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","testfile2.ps1","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\testfile2.ps1
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","testfile2","System.Collections.Generic.List`1[System.String]",,"testfile2.ps1","16","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","False","True","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\testfile2.ps1",".ps1","9/8/2024 12:24:06 PM","9/8/2024 4:24:06 PM","9/8/2024 12:24:06 PM","9/8/2024 4:24:06 PM","9/8/2024 12:24:06 PM","9/8/2024 4:24:06 PM","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\testfile3.ps1","Microsoft.PowerShell.Core\FileSystem::C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","testfile3.ps1","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\testfile3.ps1
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","testfile3","System.Collections.Generic.List`1[System.String]",,"testfile3.ps1","16","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working","False","True","C:\users\champuser\mrees2-Linux-Unix-Programming\windows-working\testfile3.ps1",".ps1","9/8/2024 12:24:17 PM","9/8/2024 4:24:17 PM","9/8/2024 12:24:17 PM","9/8/2024 4:24:17 PM","9/8/2024 12:24:17 PM","9/8/2024 4:24:17 PM","Archive"
