@@ -20,5 +20,3 @@ function ApacheLogs1() {
     return $tableRecords | Where-Object { $_.IP -like "10.*" }
 }
 
-$tableRecords = ApacheLogs1
-$tableRecords | Format-Table -AutoSize -Wrap
