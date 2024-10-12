@@ -87,21 +87,10 @@ function getRiskUsers($Days) {
     
         ## Group failed logins by username and count occurrences
         $userFailures = $failedLogins | 
-        Group-Object { $_.Properties[5].Value }, { $_.MachineName } | 
-        Where-Object { $_.Count -gt 10 } |
-        Select-Object @{
-            Name='Username';
-            Expression={$_.Group[0].Properties[5].Value}
-        }, 
-        @{
-            Name='MachineName';
-            Expression={$_.Group[0].MachineName}
-        },
-        @{
-            Name='FailedLogins';
-            Expression={$_.Count}
-        }
-
-    ## Return the results
-    return $userFailures
-}
+            Group-Object { $_.Properties[5].Value } | 
+            Where-Object { $_.Count -gt 10 } |
+            Select-Object @{Name='Username';Expression={$_.Name}}, Count
+    
+        ## Return usernames
+        return $userFailures | Select-Object -ExpandProperty Username
+    }
