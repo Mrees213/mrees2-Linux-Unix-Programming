@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Check if a network prefix is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <network_prefix>"
+    echo "Example: $0 192.168.1"
+    exit 1
+fi
+
+network_prefix=$1
+
+# Loop through the range of IP addresses from 1 to 254
+for i in {1..254}; do
+    ip="${network_prefix}.${i}"
+    # Ping the IP address with a timeout of 1 second
+    ping -c 1 -W 1 "$ip" > /dev/null 2>&1
+
+    # Check the exit status of the ping command
+    if [ $? -eq 0 ]; then
+        echo "$ip is active"
+    fi
+done
+
+
+

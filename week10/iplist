@@ -1,0 +1,48 @@
+/bin/bash
+
+# Usage: ./generate_ips.sh 10.0.0.0/24
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <Prefix>"
+    exit 1
+fi
+
+prefix=$1
+
+# Extract the base IP and CIDR
+IFS='/' read -r ip cidr <<< "$prefix"
+IFS='.' read -r a b c d <<< "$ip"
+
+# Check if the CIDR is valid (only /24 supported in this script)
+if [[ $cidr -ne 24 ]]; then
+    echo "This script only supports /24 CIDR notation."
+    exit 1
+fi
+
+# Generate and print the IP addresses
+for i in {0..255}; do
+    echo "$a.$b.$c.$i"
+done
+#!/bin/bash
+
+# Usage: ./script_name.sh 10.0.0.0/24
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <Prefix>"
+    exit 1
+fi
+
+prefix=$1
+
+# Extract the base IP and CIDR
+IFS='/' read -r ip cidr <<< "$prefix"
+IFS='.' read -r a b c d <<< "$ip"
+
+# Check if the CIDR is valid (should be /24 for this script)
+if [[ $cidr -ne 24 ]]; then
+    echo "This script only supports /24 CIDR notation."
+    exit 1
+fi
+
+for i in {0..255}; do
+    echo "$a.$b.$c.$i"
+done
+

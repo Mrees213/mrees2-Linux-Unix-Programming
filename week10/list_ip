@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Check if the input is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <network-prefix>"
+    exit 1
+fi
+
+# Get the network prefix from input
+NETWORK_PREFIX=$1
+
+# Check if the input is at least 5 characters long
+if [ "${#NETWORK_PREFIX}" -lt 5 ]; then
+    echo "Prefix length is too short."
+    exit 1
+fi
+
+# Validate the network prefix format
+if ! [[ $NETWORK_PREFIX =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    echo "Invalid network prefix format. Please use the format x.x.x"
+    exit 1
+fi
+
+# Split the network prefix into octets
+IFS='.' read -r i1 i2 i3 <<< "$NETWORK_PREFIX"
+
+# Generate and list all possible IPs in the /24 network
+for i in {1..254}; do
+    echo "$i1.$i2.$i3.$i"
+done
+
+
+
+
+
