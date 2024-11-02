@@ -7,7 +7,7 @@ file="/var/log/apache2/access.log"
 
 
 function getAllLogs(){
-allLogs=$(cat "$file" | cut -d' '  -f1,4,7 | tr -d "[")
+allLogs=$(cat "$file" | cut -d' '  -f1,4,5 | tr -d "[")
 }
 
 
@@ -19,9 +19,14 @@ function pageCount() {
 countpage=$(awk '{print $7}' "$file" | sort | uniq -c | sort -rn)
 }
 
+function countingCurlAccess() {
+countcurl=$(awk '{print $1,$12}' "$file" | grep curl | sort | uniq -c)
+}
 
+countingCurlAccess
 pageCount
 getAllLogs
 ips
 #echo "$ipAccessed"
-echo "$countpage"
+#echo "$countpage"
+echo "$countcurl"
